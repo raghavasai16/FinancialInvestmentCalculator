@@ -1,0 +1,165 @@
+
+html
+{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@media only screen and (max-width:683px) {
+    input{
+        width: 10rem;
+    }
+
+}
+@media only screen and (max-width:520px) {
+    
+    input{
+        width: 8rem;
+    }
+    #title
+    {
+        font-size: 1.7rem;
+    }
+    footer{
+        font-size: 1rem;
+    }
+}
+
+body
+{
+    background-color: #f2f2f2;
+    border-radius: 1rem;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Oswald', sans-serif;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    scroll-behavior: smooth;
+    
+}
+/* .main_heading
+{
+    position: relative;
+}
+#AboutMe
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate();
+} */
+
+select,option,button,#reset,input
+{
+    font-family: 'Oswald', sans-serif;
+}
+.main
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#input_data
+{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+  
+}
+.container
+{
+    display: flex;
+    flex-direction: column;
+}
+.main_heading
+{
+    text-align: center;
+    font-size: 2.2rem;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow:  7px 7px 8px #00d2ff , 5px 7px 8px #3a47d5;
+    /* filter: blur(0.09rem); */
+
+}
+table
+{
+    font-size: 1.6rem;
+}
+.textstart
+{
+    font-size: 2rem;
+}
+
+.data_header
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+.input_table
+{
+  text-align: center;
+    width: 100%;
+    height: 90vh;
+    
+}
+
+.title
+{
+    text-align: center;
+}
+input
+{
+    text-align: center;
+    background: #f2f2f2;
+    display: inline-block;
+    height: 3.2rem;
+    border-radius: 1rem;
+    
+}
+select
+{
+    border-radius: 0.5rem;
+}
+
+.hidden
+{
+    display: none;
+}
+#reset,#submitButton
+{
+    border-radius: 0.5rem;
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+#reset:hover,#submitButton:hover,select:hover
+{
+    cursor: pointer;
+}
+footer
+{
+    width: 80%;
+    height: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-align: center;
+}
+a
+{
+    text-decoration: none;
+}
+.content
+{
+    display: flex;
+    justify-content: center;
+   padding: 1rem;
+}

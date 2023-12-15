@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Investment Calculcator</title>
+    <meta name="description" content="Financial Calculcator stocks mutal funds gold">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="main">
+        <section class="container">
+            <header class="main_heading">
+                <h1 id="title">Financial Investment Caluclator</h1>
+               
+            </header>
+           
+            <form action="" class="tables" id="input_data" >
+                <header class="data_header">
+                    <h2 class="textstart">Target year to start</h2>
+                    <select name="start_year" id="start_year"></select>
+                </header>
+                <table class="input_table">
+                    <tr class="t_row">
+                        <th>Investment Particulars</th>
+                        <th>Year</th>
+                        <th>Target Amount</th>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            Business Plan
+                        </td>
+                        <td>
+                            <input type="number" id="Business_year" class="year" onfocusout="year(this)" >
+                        </td>
+                        <td>
+                            <input type="number" id="Business_amount" class="Amount" value="0"  onfocus="Zero(this)" onfocusout="add(this)" min="0"  pattern="\d+" >
+                        </td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                           Property Buy
+                        </td>
+                        <td>
+                            <input type="number" id="House_year" class="year" onfocusout="year(this)">
+                        </td>
+                        <td>
+                            <input type="number" id="House_amount" class="Amount" value="0" onfocus="Zero(this)" onfocusout="add(this)" pattern="\d+" >
+                        </td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            Childern Education(10+2)
+                        </td>
+                        <td>
+                            <input type="number" id="child_year" class="year" onfocusout="year(this)">
+                        </td>
+                        <td>
+                            <input type="number" id="child_amount" class="Amount" value="0" onfocus="Zero(this)" onfocusout="add(this)" pattern="\d+" >
+                        </td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            Childern Higher Education
+                        </td>
+                        <td>
+                            <input type="number" id="child_higher_year" class="year" onfocusout="year(this)" >
+                        </td>
+                        <td>
+                            <input type="number" id="child_higher_amount" class="Amount" value="0" onfocus="Zero(this)" onfocusout="add(this)" pattern="\d+" >
+                        </td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                            Retirement
+                        </td>
+                        <td>
+                            <input type="number" id="Retirement_year" class="year" onfocusout="year(this)">
+                        </td>
+                        <td>
+                            <input type="number" id="Retirement_amount" class="Amount"value="0" onfocus="Zero(this)" onfocusout="add(this)" pattern="\d+" >
+                        </td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>
+                           Others
+                        </td>
+                        <td>
+                            <input type="number" id="others_year" class="year" onfocusout="year(this)">
+                        </td>
+                        <td>
+                            <input type="number" id="others_amount" class="Amount" value="0" onfocus="Zero(this)" onfocusout="add(this)" pattern="\d+" >
+                        </td>
+                    </tr>
+                    <tr class="t_row">
+                        <td colspan="2">
+                           TotalAmount
+                        </td>
+                        
+                        <td>
+                            <input type="number" id="total_amount" class="Amount" value="0" readonly >
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td colspan="2">
+                            <select name="Investment_type" id="Investment_type" onchange="percentage(this)">
+                                <option value="Select">Type of Investment</option>
+                                <option value="FD">Fixed Deposit</option>
+                                <option value="Equity">Equity/MF</option>
+                                <option value="Gold">Gold</option>
+
+                            </select>
+                        </td>
+                        <td>
+                            <select name="Return_percentage" id="Return_percentage">
+                                <option value="7%">7%</option>
+                                <option value="8%">8%</option>
+                                <option value="9%">9%</option>
+                                <option value="10%">10%</option>
+                                <option value="11%">11%</option>
+                                <option value="12%">12%</option>
+                                <option value="13%">13%</option>
+                                <option value="14%">14%</option>
+                                <option value="15%">15%</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button id="submitButton" onclick="Submit()">Submit</button>
+                        </td>
+                        <td>
+                            <input id="reset" type="reset" value="Reset" >
+                        </td>
+                    </tr>
+                </table>
+
+               
+            </form>
+            <form action="" class="tables hidden" id="yearly_table">
+                <h1 class="textstart content">One Time Investment</h1>
+                <table class="input_table">
+                <tr>
+                    <td>
+                       Business Plan
+                    </td>
+                    <td>
+                        <input type="text" id="percentage" class="percentage" readonly>
+                    </td>
+                    <td>
+                        <input type="number" id="Business_yearly" class="Year_Amount" readonly >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Property Buy
+                    </td>
+                    <td>
+                        <input type="text" id="percentage" class="percentage" readonly>
+                    </td>
+                    <td>
+                        <input type="number" id="Property_Buy_yearly" class="Year_Amount" readonly >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Childern Education(10+2)
+                    </td>
+                    <td>
+                        <input type="text" id="percentage" class="percentage" readonly>
+                    </td>
+                    <td>
+                        <input type="number" id="Childern1_yearly" class="Year_Amount" readonly >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Childern Higher Education
+                    </td>
+                    <td>
+                        <input type="text" id="percentage" class="percentage" readonly>
+                    </td>
+                    <td>
+                        <input type="number" id="Childern2_yearly" class="Year_Amount" readonly >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Retirement
+                    </td>
+                    <td>
+                        <input type="text" id="percentage" class="percentage" readonly>
+                    </td>
+                    <td>
+                        <input type="number" id="Retirement_yearly" class="Year_Amount" readonly >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      Others
+                    </td>
+                    <td>
+                        <input type="text" id="percentage" class="percentage" readonly>
+                    </td>
+                    <td>
+                        <input type="number" id="others_yearly" class="Year_Amount" readonly >
+                    </td>
+                </tr>
+            </table>
+            </form>
+            <form action="" class="tables hidden" id="monthly_table">
+                <h2 class="textstart content">Monthly Investment</h2>
+                <table class="input_table">
+                    <tr>
+                        <td>
+                           Business Plan
+                        </td>
+                        <td>
+                            <input type="text" id="percentage" class="percentage" readonly>
+                        </td>
+                        <td>
+                            <input type="number" id="Business_Monthly" class="Month_Amount" readonly >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Property Buy
+                        </td>
+                        <td>
+                            <input type="text" id="percentage" class="percentage" readonly>
+                        </td>
+                        <td>
+                            <input type="number" id="Property_Buy_Monthly" class="Month_Amount" readonly >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Childern Education(10+2)
+                        </td>
+                        <td>
+                            <input type="text" id="percentage" class="percentage" readonly>
+                        </td>
+                        <td>
+                            <input type="number" id="Childern1_Monthly" class="Month_Amount" readonly >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Childern Higher Education
+                        </td>
+                        <td>
+                            <input type="text" id="percentage" class="percentage" readonly>
+                        </td>
+                        <td>
+                            <input type="number" id="Childern2_Monthly" class="Month_Amount" readonly >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Retirement
+                        </td>
+                        <td>
+                            <input type="text" id="percentage" class="percentage" readonly>
+                        </td>
+                        <td>
+                            <input type="number" id="Retirement_Monthly" class="Month_Amount" readonly >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          Others
+                        </td>
+                        <td>
+                            <input type="text" id="percentage" class="percentage" readonly>
+                        </td>
+                        <td>
+                            <input type="number" id="others_Monthly" class="Month_Amount" readonly >
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            
+        </section>
+        
+    </section>
+    <footer>
+        <p><a href="https://batchuveeraraghava.netlify.app/" target="_blank"> &copy;Batchu Veera Raghava </a></p>
+    </footer>
+</body>
+<script src="index.js"></script>
+</html>
