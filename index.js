@@ -3,13 +3,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const select = document.getElementById('start_year');
    
 
-    for (let year = currentYear; year <= currentYear + 10; year++) {
+    for (let year = currentYear+1; year <= currentYear + 10; year++) {
         
         const option = document.createElement('option');
         option.value = year;
         option.text = year;
         select.add(option);
     }
+
+    const year2 =document.getElementsByClassName('year')
+    for(let i=0;i<year2.length;i++)
+    {
+    for (let year = currentYear+2; year <= currentYear + 60; year++) {
+        
+        const option = document.createElement('option');
+        option.value = year;
+        option.text = year;
+        year2[i].add(option);
+    }
+}
 });
 let total=document.getElementById('total_amount');
 let sub
